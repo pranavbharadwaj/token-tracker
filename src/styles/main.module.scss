@@ -1,0 +1,41 @@
+.mainContainer {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  height: 70%;
+  width: 100%;
+}
+
+.searchSection {
+  width: 40%;
+  background: var(--card-background);
+}
+
+.favoritesSection {
+  width: 40%;
+  background: var(--card-background);
+}
+
+.recentViewedSection {
+  width: 20%;
+  background: var(--card-background);
+}
+
+.BorderTopSection1 {
+  background: var(--dark-purple);
+  font-size: 4px;
+  display: flex;
+  width: 100%;
+}
+.BorderTopSection2 {
+  background: var(--dark-blue);
+  font-size: 4px;
+  display: flex;
+  width: 100%;
+}
+.BorderTopSection3 {
+  background: var(--dark-yellow);
+  font-size: 4px;
+  display: flex;
+  width: 100%;
+}

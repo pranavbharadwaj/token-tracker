@@ -1,8 +1,8 @@
 "use client";
 import styles from "@/styles/page.module.scss";
 
-const Header: React.FC = () => {
+const Card: React.FC = () => {
   return <header className={styles.header}></header>;
 };
 
-export default Header;
+export default Card;
