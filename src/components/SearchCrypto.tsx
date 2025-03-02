@@ -15,6 +15,7 @@ const fetchCryptoList = async (currency: string): Promise<Crypto[]> => {
   const response = await axios.get(
     `${API_URL}?vs_currency=${currency}&order=market_cap_desc&per_page=50&page=1`
   );
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return response.data.map((crypto: any) => ({
     id: crypto.id,
     symbol: crypto.symbol.toUpperCase(),
