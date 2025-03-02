@@ -1,8 +1,41 @@
 .page {
-  align-items: center;
-  justify-items: center;
   height: 100%;
   font-family: var(--font-geist-sans);
+}
+
+.intro {
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  font-size: 72px;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  background: var(--background);
+  z-index: 1;
+}
+
+.introTag1 {
+  color: var(--light-purple);
+  visibility: hidden;
+  opacity: 0;
+}
+
+.introTag2 {
+  color: var(--light-blue);
+  visibility: hidden;
+  opacity: 0;
+}
+
+.introTag3 {
+  color: var(--light-yellow);
+  visibility: hidden;
+  opacity: 0;
 }
 
 @media (prefers-color-scheme: dark) {
