@@ -1,36 +1,136 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+TokenTrack
 
-## Getting Started
+TokenTrack is a modern Next.js web application that allows users to search, track, and manage their favorite cryptocurrencies in real-time. Users can also view recently viewed cryptocurrencies and dynamically switch between different fiat currencies (USD, EUR, INR, GBP, CHF). The app is designed with a clean UI, optimized for performance and accessibility.
 
-First, run the development server:
+🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+🔍 Search for top 50 cryptocurrencies (ranked by market cap).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+📈 Live price updates in multiple fiat currencies.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+⭐ Favorite cryptocurrencies to track easily.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🕒 Recently viewed list for quick access.
 
-## Learn More
+🎨 Smooth animations using GSAP.
 
-To learn more about Next.js, take a look at the following resources:
+💾 User preferences stored via Zustand.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+📡 Optimized API requests using React Query.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+⚡ Fast & scalable with Next.js and TypeScript.
 
-## Deploy on Vercel
+🛠️ Fully responsive design with SCSS & CSS Modules.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+📦 Packages Used & Why
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1️⃣ Next.js
+
+Framework: Provides server-side rendering, fast performance, and built-in routing.
+
+Why? Next.js is the best choice for SEO-friendly and scalable web applications.
+
+2️⃣ React Query (@tanstack/react-query)
+
+Used for: Managing API calls efficiently with caching and automatic background refetching.
+
+Why? Reduces unnecessary API calls and provides seamless state management for data fetching.
+
+3️⃣ Zustand
+
+Used for: Global state management (handling user preferences like selected currency, favorites, recent views, etc.).
+
+Why? Zustand is lightweight, easy to use, and avoids unnecessary re-renders compared to Redux.
+
+4️⃣ Axios
+
+Used for: Fetching cryptocurrency data from the CoinGecko API.
+
+Why? More powerful than fetch(), supports error handling, interceptors, and automatic retries.
+
+5️⃣ GSAP (GreenSock Animation Platform)
+
+Used for: Animations (initial text reveal, fading in sections smoothly).
+
+Why? GSAP provides performance-optimized animations that work better than CSS-only animations.
+
+6️⃣ SCSS (Sass) & CSS Modules
+
+Used for: Styling components in a modular, maintainable way.
+
+Why? SCSS allows nested styles, variables, and better organization, while CSS Modules ensure style encapsulation.
+
+7️⃣ CoinGecko API
+
+Used for: Fetching real-time cryptocurrency data (prices, market cap, volume, etc.).
+
+Why? Free to use, no API key required, and provides comprehensive crypto data.
+
+8️⃣ Next.js API Routes
+
+Used for: Proxying API requests to bypass CORS issues when fetching crypto data.
+
+Why? Helps prevent client-side errors and improves security.
+
+🔧 Current Implementation
+
+💡 1. User Flow
+
+Users land on the homepage and see an animated introduction (GSAP).
+
+They can search for top cryptocurrencies or browse favorites/recently viewed.
+
+Clicking on a cryptocurrency opens a modal with more details.
+
+Users can switch the currency (USD, EUR, INR, etc.), and all prices update instantly.
+
+Data is cached using React Query for faster performance.
+
+Favorites & recent views are saved using Zustand (local storage support included).
+
+🛠️ 2. Key Components
+
+Header.tsx → Contains logo and currency selector.
+
+SearchCrypto.tsx → Allows searching for crypto assets.
+
+CryptoCard.tsx → Displays cryptocurrency details in a grid.
+
+Favorites.tsx → Lists user's favorite cryptocurrencies.
+
+RecentViewed.tsx → Displays recently viewed crypto assets.
+
+Modal.tsx → Shows detailed information when clicking on a crypto.
+
+🔧 Setup & Installation
+
+1️⃣ Clone the Repository
+
+git clone https://github.com/yourusername/TokenTrack.git
+cd TokenTrack
+
+2️⃣ Install Dependencies
+
+npm install # or yarn install
+
+3️⃣ Run the Development Server
+
+npm run dev # or yarn dev
+
+🚀 Open http://localhost:3000 in your browser to view the app.
+
+📜 Future Enhancements
+
+🌍 OAuth Login (Google, GitHub) for better authentication.
+
+📊 Live chart integration for price trends.
+
+🔔 Price Alerts when a crypto reaches a certain threshold.
+
+📱 Mobile-optimized UI with touch-friendly interactions.
+
+🎯 Final Thoughts
+
+TokenTrack is a powerful yet lightweight crypto tracker designed for real-time monitoring, easy navigation, and a smooth UI experience. With advanced caching and animations, it delivers a fast and engaging user experience.
+
+🚀 Made with ❤️ using Next.js, Zustand, React Query & GSAP.
