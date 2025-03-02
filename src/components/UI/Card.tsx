@@ -12,6 +12,7 @@ interface CryptoCardProps {
   marketCap: number;
   volume: number;
   symbol: string;
+  onAddFavorite: () => void;
 }
 
 const Card: React.FC<CryptoCardProps> = ({
@@ -21,6 +22,7 @@ const Card: React.FC<CryptoCardProps> = ({
   marketCap,
   volume,
   symbol,
+  onAddFavorite,
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -33,7 +35,10 @@ const Card: React.FC<CryptoCardProps> = ({
       <p className={styles.price}>${price.toLocaleString()}</p>
 
       {isModalOpen && (
-        <Modal onClose={() => setIsModalOpen(false)}>
+        <Modal
+          onClose={() => setIsModalOpen(false)}
+          onAddFavorite={onAddFavorite}
+        >
           <p>
             <strong>Market Cap:</strong> ${marketCap.toLocaleString()}
           </p>

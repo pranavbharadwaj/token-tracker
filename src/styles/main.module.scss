@@ -83,6 +83,7 @@
   letter-spacing: 1.5px;
   position: sticky;
   top: 40px;
+  outline: none;
 }
 
 .searchBody {
@@ -138,6 +139,7 @@
   cursor: pointer;
   color: var(--off-white);
   transition: 0.5s all;
+  margin-left: 5px;
 }
 
 .closeButton:hover {

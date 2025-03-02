@@ -27,7 +27,7 @@ const fetchCryptoList = async (): Promise<Crypto[]> => {
 
 const SearchCrypto: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const { addRecentView } = useUserStore();
+  const { addRecentView, addFavorite } = useUserStore();
   const [visibleItems, setVisibleItems] = useState(10);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -111,6 +111,7 @@ const SearchCrypto: React.FC = () => {
               marketCap={crypto.marketCap}
               volume={crypto.volume}
               symbol={crypto.symbol}
+              onAddFavorite={() => addFavorite(crypto)}
             />
           ))}
         </div>
