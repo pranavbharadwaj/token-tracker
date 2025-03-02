@@ -16,17 +16,15 @@ export default function Home() {
 
   useGSAP(() => {
     gsap.to(taglineRef1.current, { autoAlpha: 1, duration: 1, delay: 1 });
-    gsap.to(taglineRef2.current, { autoAlpha: 1, duration: 1 }, ">");
-    gsap.to(taglineRef3.current, { autoAlpha: 1, duration: 1 }, ">");
-    gsap.to(
-      taglineRef1.current,
-      { autoAlpha: 0, duration: 0.33, delay: 2 },
-      ">"
-    );
-    gsap.to(taglineRef2.current, { autoAlpha: 0, duration: 0.33 }, ">");
-    gsap.to(taglineRef3.current, { autoAlpha: 0, duration: 0.33 }, ">");
-    gsap.to(sectionRef.current, { autoAlpha: 0, duration: 1 }, ">");
+    gsap.to(taglineRef2.current, { autoAlpha: 1, duration: 1, delay: 2 });
+    gsap.to(taglineRef3.current, { autoAlpha: 1, duration: 1, delay: 3 });
+    gsap.to(taglineRef1.current, { autoAlpha: 0, duration: 0.33, delay: 5 });
+    gsap.to(taglineRef2.current, { autoAlpha: 0, duration: 0.33, delay: 5.33 });
+    gsap.to(taglineRef3.current, { autoAlpha: 0, duration: 0.33, delay: 5.66 });
+    gsap.to(sectionRef.current, { autoAlpha: 0, duration: 1, delay: 6 });
   }, []);
+
+  //some issue if < or > is used for gsap animation scheduling, brute force it is
 
   return (
     <QueryClientProvider client={queryClient}>
