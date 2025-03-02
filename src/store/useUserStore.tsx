@@ -14,6 +14,8 @@ interface UserStore {
   users: Record<string, UserPreferences>; // Store preferences per user
   currentUser: string | null;
   selectedCurrency: string;
+  setSelectedCurrency: (curreny: string) => void;
+  removeFavorite: (id: string) => void;
   setUser: (username: string) => void;
   addFavorite: (crypto: Crypto) => void;
   addRecentView: (crypto: Crypto) => void;
@@ -25,7 +27,9 @@ export const useUserStore = create<UserStore>()(
       users: {}, // No users initially
       currentUser: null,
       selectedCurrency: "usd", // Default currency
-      setSelectedCurrency: (currency) => set({ selectedCurrency: currency }),
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      setSelectedCurrency: (currency: any) =>
+        set({ selectedCurrency: currency }),
       setUser: (username) =>
         set((state) => ({
           currentUser: username,

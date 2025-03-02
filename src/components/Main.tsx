@@ -5,9 +5,9 @@ import SearchCrypto from "@/components/SearchCrypto";
 import Favorites from "@/components/Favorites";
 import RecentViewed from "@/components/RecentViewed";
 
-const Body: React.FC = ({ mainRef }) => {
+const Body: React.FC = () => {
   return (
-    <div className={styles.mainContainer} ref={mainRef}>
+    <div className={styles.mainContainer}>
       <div className={styles.searchSection}>
         <SearchCrypto />
       </div>
