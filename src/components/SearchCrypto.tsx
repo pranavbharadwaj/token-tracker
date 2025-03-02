@@ -86,6 +86,10 @@ const SearchCrypto: React.FC = () => {
   return (
     <div className={styles.searchContainer} ref={containerRef}>
       <div className={styles.BorderTopSection1}>&nbsp;</div>
+      <div className={styles.sectionTitle}>
+        SEARCH TOKENS
+        <span className={styles.titletagline}>&nbsp;- STAY ON TRACK</span>
+      </div>
       <div className={styles.searchBody}>
         <input
           type="text"

@@ -48,6 +48,23 @@
   height: 100%;
 }
 
+.sectionTitle {
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 1.5px;
+  padding: 10px;
+  position: sticky;
+  top: 5px;
+  background: var(--card-background);
+  display: flex;
+  align-items: center;
+}
+
+.titletagline {
+  font-weight: 300;
+  font-size: 12px;
+}
+
 .loading {
   font-weight: 600;
   font-size: 12px;
@@ -65,7 +82,7 @@
   font-size: 12px;
   letter-spacing: 1.5px;
   position: sticky;
-  top: 5px;
+  top: 40px;
 }
 
 .searchBody {
