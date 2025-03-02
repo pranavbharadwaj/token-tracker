@@ -17,7 +17,7 @@ const Favorites: React.FC = () => {
         <span className={styles.titletagline}>&nbsp;- NEVER MISS A BEAT</span>
       </div>
       {favorites.length === 0 ? (
-        <p>No favorites added yet.</p>
+        <p className={styles.favoritesMessage}>No favorites added yet.</p>
       ) : (
         <div className={styles.cryptoGrid}>
           {favorites.map((crypto) => (
@@ -31,6 +31,8 @@ const Favorites: React.FC = () => {
               volume={crypto.volume}
               symbol={crypto.symbol}
               onAddFavorite={() => removeFavorite(crypto.id)}
+              onClick={() => {}}
+              clickEnable={true}
             />
           ))}
         </div>

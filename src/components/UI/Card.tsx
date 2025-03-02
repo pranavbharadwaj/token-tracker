@@ -12,7 +12,9 @@ interface CryptoCardProps {
   marketCap: number;
   volume: number;
   symbol: string;
+  clickEnable: boolean;
   onAddFavorite: () => void;
+  onClick: () => void;
 }
 
 const Card: React.FC<CryptoCardProps> = ({
@@ -23,18 +25,26 @@ const Card: React.FC<CryptoCardProps> = ({
   volume,
   symbol,
   onAddFavorite,
+  onClick,
+  clickEnable,
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <div className={styles.card} onClick={() => setIsModalOpen(true)}>
+    <div
+      className={styles.card}
+      onClick={() => {
+        setIsModalOpen(true);
+        onClick();
+      }}
+    >
       <img src={image} alt={name} className={styles.image} />
       <h3 className={styles.name}>
         {name} ({symbol.toUpperCase()})
       </h3>
       <p className={styles.price}>${price.toLocaleString()}</p>
 
-      {isModalOpen && (
+      {isModalOpen && clickEnable && (
         <Modal
           onClose={() => setIsModalOpen(false)}
           onAddFavorite={onAddFavorite}

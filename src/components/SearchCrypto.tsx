@@ -112,6 +112,8 @@ const SearchCrypto: React.FC = () => {
               volume={crypto.volume}
               symbol={crypto.symbol}
               onAddFavorite={() => addFavorite(crypto)}
+              onClick={() => addRecentView(crypto)}
+              clickEnable={true}
             />
           ))}
         </div>
