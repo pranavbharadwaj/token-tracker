@@ -1,5 +1,5 @@
 "use client";
-
+import UserLogin from "@/components/UserLogin";
 import styles from "@/styles/header.module.scss";
 
 const Header: React.FC = () => {
@@ -9,6 +9,7 @@ const Header: React.FC = () => {
         <span className={styles.logothinFont}>TOKEN</span>
         <span className={styles.logothickFont}>TRACK</span>
       </div>
+      <UserLogin />
     </header>
   );
 };

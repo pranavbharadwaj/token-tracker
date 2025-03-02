@@ -6,14 +6,20 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: rgb(38, 38, 46);
+    --background: rgb(51, 50, 63);
     --foreground: #ededed;
+    --card-border: rgb(29, 29, 35);
+    --card-background: rgb(38, 38, 46);
+    --off-white: rgb(208, 208, 208);
+    --light-green: rgb(0, 137, 87);
+    --dark-green: rgb(0, 53, 48);
   }
 }
 
 html,
 body {
   max-width: 100vw;
+  height: 100%;
   overflow-x: hidden;
 }
 
