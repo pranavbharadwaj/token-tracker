@@ -10,7 +10,6 @@
 .searchSection {
   width: 40%;
   background: var(--card-background);
-  overflow: scroll;
 }
 
 .favoritesSection {
@@ -42,6 +41,11 @@
   font-size: 4px;
   display: flex;
   width: 100%;
+}
+
+.searchContainer {
+  overflow-y: scroll;
+  height: 100%;
 }
 
 .loading {
