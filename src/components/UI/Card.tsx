@@ -3,6 +3,7 @@
 import { useState } from "react";
 import styles from "@/styles/main.module.scss";
 import Modal from "@/components/UI/Modal";
+import { useUserStore } from "@/store/useUserStore";
 
 interface CryptoCardProps {
   id: string;
@@ -17,6 +18,14 @@ interface CryptoCardProps {
   onClick: () => void;
 }
 
+const currencySymbols: Record<string, string> = {
+  usd: "$",
+  eur: "€",
+  inr: "₹",
+  gbp: "£",
+  chf: "CHF",
+};
+
 const Card: React.FC<CryptoCardProps> = ({
   name,
   image,
@@ -29,6 +38,8 @@ const Card: React.FC<CryptoCardProps> = ({
   clickEnable,
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { selectedCurrency } = useUserStore();
+  const currencySymbol = currencySymbols[selectedCurrency] || "";
 
   return (
     <div
@@ -42,7 +53,10 @@ const Card: React.FC<CryptoCardProps> = ({
       <h3 className={styles.name}>
         {name} ({symbol.toUpperCase()})
       </h3>
-      <p className={styles.price}>${price.toLocaleString()}</p>
+      <p className={styles.price}>
+        {currencySymbol}
+        {price.toLocaleString()}
+      </p>
 
       {isModalOpen && clickEnable && (
         <Modal
@@ -50,10 +64,12 @@ const Card: React.FC<CryptoCardProps> = ({
           onAddFavorite={onAddFavorite}
         >
           <p>
-            <strong>Market Cap:</strong> ${marketCap.toLocaleString()}
+            <strong>Market Cap:</strong> {currencySymbol}
+            {marketCap.toLocaleString()}
           </p>
           <p>
-            <strong>24h Volume:</strong> ${volume.toLocaleString()}
+            <strong>24h Volume:</strong> {currencySymbol}
+            {volume.toLocaleString()}
           </p>
         </Modal>
       )}

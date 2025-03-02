@@ -9,11 +9,12 @@ import { Crypto } from "@/types/Crypto";
 import Card from "./UI/Card";
 
 // CoinGecko API for full crypto details
-const API_URL =
-  "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1";
+const API_URL = "https://api.coingecko.com/api/v3/coins/markets";
 
-const fetchCryptoList = async (): Promise<Crypto[]> => {
-  const response = await axios.get(API_URL);
+const fetchCryptoList = async (currency: string): Promise<Crypto[]> => {
+  const response = await axios.get(
+    `${API_URL}?vs_currency=${currency}&order=market_cap_desc&per_page=50&page=1`
+  );
   return response.data.map((crypto: any) => ({
     id: crypto.id,
     symbol: crypto.symbol.toUpperCase(),
@@ -27,7 +28,7 @@ const fetchCryptoList = async (): Promise<Crypto[]> => {
 
 const SearchCrypto: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const { addRecentView, addFavorite } = useUserStore();
+  const { addRecentView, addFavorite, selectedCurrency } = useUserStore();
   const [visibleItems, setVisibleItems] = useState(10);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -36,8 +37,8 @@ const SearchCrypto: React.FC = () => {
     isLoading,
     error,
   } = useQuery<Crypto[]>({
-    queryKey: ["cryptoData"],
-    queryFn: fetchCryptoList,
+    queryKey: ["cryptoData", selectedCurrency],
+    queryFn: () => fetchCryptoList(selectedCurrency),
     staleTime: 60000,
   });
 
