@@ -149,4 +149,8 @@
   font-size: 21px;
   color: var(--light-green);
   letter-spacing: 0px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100px;
 }
