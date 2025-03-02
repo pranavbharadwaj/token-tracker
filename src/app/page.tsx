@@ -3,7 +3,7 @@ import styles from "@/styles/page.module.scss";
 import Header from "@/components/Header";
 import Main from "@/components/Main";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 

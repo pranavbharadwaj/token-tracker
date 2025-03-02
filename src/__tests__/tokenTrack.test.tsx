@@ -28,7 +28,7 @@ describe("TokenTrack Application", () => {
   });
 
   test("CurrencySelector updates the currency in Zustand store", async () => {
-    renderWithProviders(<CurrencySelector />);
+    renderWithProviders(<CurrencySelect />);
 
     const select = screen.getByLabelText("Select Currency:");
     expect(select).toBeInTheDocument();
